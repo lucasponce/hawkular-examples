@@ -57,7 +57,7 @@ function create_trigger() {
   ## Create new trigger
 
   local trigger="{\"id\":\"check-firefox-process\","
-  trigger="$trigger \"name\":\"Firefox process is UP\","
+  trigger="$trigger \"name\":\"Firefox process\","
   trigger="$trigger \"description\":\"Check if firefox process\","
   trigger="$trigger \"actions\":{\"email\":[\"my-group-to-notify\"]},"
   trigger="$trigger \"firingMatch\":\"ALL\","

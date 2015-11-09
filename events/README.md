@@ -16,3 +16,25 @@ Event structure is used as:
         "text": "..."       // <Main content of the event>
      }
 ```
+
+Events creation are sent to the following REST endpoint:
+
+```
+POST /hawkular/alerts/events
+```
+
+REST endpoint needs header authorization on hawkular deployments:
+
+```
+Authorization: Basic amRvZTpwYXNzd29yZA==
+```
+
+Hawkular manages the authorization and links with the associated tenant.
+
+In standalone deployments it is needed to specify the tenant:
+
+```
+Hawkular-Tenant: my-organization
+```
+
+These tutorial scripts are tested against a standalone deployment of hawkular-alerts.

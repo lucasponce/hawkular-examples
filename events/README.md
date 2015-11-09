@@ -116,6 +116,22 @@ The condition must have a dataId to define an events source. This means that onl
 ## send-events-tutorial-03.sh
 
 This example sends multiple random events in a loop.
-Note that deployment events are marked with dataId equals to "events-source'. This means that only deployment events 
-are processed for alerting. A dataId is active if there is a reference of it on a trigger condition. 
-Only events with dataId actives are evaluated by the engine.
+
+Note that deployment events are marked with dataId equals to "events-source'. 
+
+```javascript
+    {
+        "id": "...",        // <A unique identifier for this event, typically an UUID>,
+        "ctime": 123,       // <Creation time in milliseconds>,
+        "category": "...",  // <Category of the event, used for filtering>,
+        "text": "...",      // <Main content of the event>
+        "dataId": "...",    // <Define a source of events>
+                            // This dataId is used in trigger conditions to indicate which source of events
+                            // should be used for evaluation
+     }
+```
+
+This means that only deployment events are processed for alerting. 
+
+A dataId is active if there is a reference of it on a trigger condition. Only events with dataId actives are 
+evaluated by the engine.

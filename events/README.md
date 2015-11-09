@@ -40,3 +40,53 @@ Events creation are sent to the following REST endpoint:
 ```
 POST /hawkular/alerts/events
 ```
+
+## send-events-tutorial-02.sh
+
+Adding tags into events offer a structured way to add information used for filtering.
+
+Tags is a map of key/value that can be used to add additional information into the event structure.
+All info placed into tags map can be used for filtering.
+
+In the deployments events we are adding:
+
+```javascript
+    {
+        ...
+        "tags": {
+            "operation": "...",     // Type of operation,
+            "app": "...",           // Name of the application which is event is referring,
+            "container:" ..."       // Name of the container where the app is deployed,
+        }
+    }
+```
+
+And in the log events:
+
+```javascript
+    {
+        ...
+        "tags": {
+            "app": "...",           // Name of the application which is event is referring,
+        }
+    }
+```
+
+Events can be queried using the following REST endpoint:
+
+```
+GET /hawkular/alerts/events                             // For all events
+```
+
+```
+GET /hawkular/alerts/events?categories=DEPLOYMENT,LOG   // Filtering by specific categories
+```
+
+```
+GET /hawkular/alerts/events?tags=app|appA,app|appB      // Filtering by specific tags
+```
+
+
+
+
+

@@ -126,8 +126,8 @@ Note that deployment events are marked with dataId equals to "events-source'.
         "category": "...",  // <Category of the event, used for filtering>,
         "text": "...",      // <Main content of the event>
         "dataId": "...",    // <Define a source of events>
-                            // This dataId is used in trigger conditions to indicate which source of events
-                            // should be used for evaluation
+                            // This dataId is used in trigger conditions to indicate which
+                            // source of events should be used for evaluation
      }
 ```
 

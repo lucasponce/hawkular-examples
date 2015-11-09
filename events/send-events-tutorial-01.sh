@@ -21,6 +21,11 @@ function post_event() {
 
 }
 
+function query_events() {
+    printf "\nQuery events:\n\n"
+    curl -X GET -H "$HEADER_JSON" -H "$HEADER_TENANT" $HAWKULAR_URL/events
+}
+
 function send_deployment_event() {
 
     declare -a operations=("deployment" "undeployment")
@@ -69,7 +74,8 @@ function send_log_event() {
 ## Main
 
 send_deployment_event;
-
 send_log_event;
+
+query_events;
 
 

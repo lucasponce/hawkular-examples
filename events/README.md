@@ -55,7 +55,7 @@ In the deployments events we are adding:
         "tags": {
             "operation": "...",     // Type of operation,
             "app": "...",           // Name of the application which is event is referring,
-            "container:" ..."       // Name of the container where the app is deployed,
+            "container": "..."       // Name of the container where the app is deployed,
         }
     }
 ```

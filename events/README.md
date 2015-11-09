@@ -8,7 +8,7 @@ Minimalist example to send and event.
 
 Event structure is used as:
 
-```json
+```javascript
     {
         "id": "...",        // <A unique identifier for this event, typically an UUID>,
         "ctime": 123,       // <Creation time in milliseconds>,

@@ -52,7 +52,6 @@ In the deployments events we are adding:
 
 ```javascript
     {
-        ...
         "tags": {
             "operation": "...",     // Type of operation,
             "app": "...",           // Name of the application which is event is referring,
@@ -65,7 +64,6 @@ And in the log events:
 
 ```javascript
     {
-        ...
         "tags": {
             "app": "...",           // Name of the application which is event is referring,
         }

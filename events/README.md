@@ -43,7 +43,7 @@ POST /hawkular/alerts/events
 
 ## send-events-tutorial-02.sh
 
-Adding tags into events offer a structured way to add information used for filtering.
+Adding tags into events offers a structured way to add information used for filtering.
 
 Tags is a map of key/value that can be used to add additional information into the event structure.
 All info placed into tags map can be used for filtering.
@@ -84,7 +84,38 @@ GET /hawkular/alerts/events?categories=DEPLOYMENT,LOG   // Filtering by specific
 GET /hawkular/alerts/events?tags=app|appA,app|appB      // Filtering by specific tags
 ```
 
+## create-events-triggers-tutorial-03.sh
 
+Trigger creation to detect undeployment events on containerZ.
 
+Previous triggers with same id are deleted to generate a new one:
 
+```javascript
+    {
+        "id":"detect-undeployment-containerZ",
+        "name":"Undeployments detection",
+        "action":["email-to-admin-group"],
+        "severity":"HIGH"
+    }
+```
 
+Once trigger is created we can add a condition to fire an alert on undeployment events for containerZ:
+
+```javascript
+    {
+        "triggerMode":"FIRING",
+        "type":"EVENT",
+        "dataId":"events-source",
+        "expression":"tags.operation == 'undeployment',tags.container == 'containerZ'"
+    }
+```
+
+The condition must have a dataId to define an events source. This means that only events with dataId == 
+"events-source" will be evaluated against this rule.
+
+## send-events-tutorial-03.sh
+
+This example sends multiple random events in a loop.
+Note that deployment events are marked with dataId equals to "events-source'. This means that only deployment events 
+are processed for alerting. A dataId is active if there is a reference of it on a trigger condition. 
+Only events with dataId actives are evaluated by the engine.

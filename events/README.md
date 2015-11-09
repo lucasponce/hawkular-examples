@@ -10,9 +10,9 @@ Event structure is used as:
 
 ```json
     {
-        "id": <A unique identifier for this event, typically an UUID>,
-        "ctime": <Creation time in milliseconds>,
-        "category": <Category of the event, used for filtering>,
-        "text": <Main content of the event>
+        "id": "...",        // <A unique identifier for this event, typically an UUID>,
+        "ctime": 123,       // <Creation time in milliseconds>,
+        "category": "...",  // <Category of the event, used for filtering>,
+        "text": "..."       // <Main content of the event>
      }
 ```

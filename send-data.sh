@@ -11,10 +11,10 @@ function send_data() {
     local timestamp=$(date +%s)
     local valuex=$(shuf -i1-10 -n1)
     local valuey=$(shuf -i1-10 -n1)
-    local data="{\"numericData\":["
-    data="$data {\"id\":\"data-x\",\"type\":\"NUMERIC\",\"timestamp\":$timestamp,\"value\":$valuex},"
-    data="$data {\"id\":\"data-y\",\"type\":\"NUMERIC\",\"timestamp\":$timestamp,\"value\":$valuey}"
-    data="$data ]}"
+    local data="["
+    data="$data {\"id\":\"data-x\",\"timestamp\":$timestamp,\"value\":\"$valuex\"},"
+    data="$data {\"id\":\"data-y\",\"timestamp\":$timestamp,\"value\":\"$valuey\"}"
+    data="$data ]"
   
     echo "Send $data"
     

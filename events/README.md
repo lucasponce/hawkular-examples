@@ -1,4 +1,4 @@
-# hawkular-examples events
+# hawkular-alerts Events
 
 These examples shows how to use the events API in hawkular-alerts.
 

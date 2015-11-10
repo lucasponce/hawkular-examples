@@ -17,9 +17,9 @@ function send_data() {
       firefox_availability="DOWN"
     fi
     
-    local data="{\"availability\":["
-    data="$data {\"id\":\"firefox-process\",\"type\":\"AVAILABILITY\",\"timestamp\":$timestamp,\"value\":\"$firefox_availability\"}"
-    data="$data ]}"
+    local data="["
+    data="$data {\"id\":\"firefox-process\",\"timestamp\":$timestamp,\"value\":\"$firefox_availability\"}"
+    data="$data ]"
   
     echo "Send $data"
     

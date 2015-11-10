@@ -156,13 +156,13 @@ with same dataId are evaluated against its specific condition.
 ```javascript
   [
     {
-        "triggerMode":"FIRING\",
+        "triggerMode":"FIRING",
         "type":"EVENT",
         "dataId":"events-deployments-source",
         "expression":"tags.operation == 'undeployment',tags.container == 'containerZ'"
      },
     {
-        "triggerMode\":\"FIRING\",
+        "triggerMode":"FIRING",
         "type":"EVENT",
         "dataId":"events-logs-source",
         "expression":"text starts 'ERROR'"

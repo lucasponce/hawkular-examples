@@ -204,3 +204,27 @@ its specific conditions.
 
 Log events are assigned with "events-log-source" dataId to define a different events source and make sure that these 
 events are only evaluated with its specific conditions.
+
+## create-events-triggers-tutorial-05.sh
+
+Trigger creation to detect undeployments events on containerZ and errors on log similar as 
+create-events-triggers-tutorial-04.sh example, but now it will generate a new simple Event.
+ 
+```javascript
+    {
+        "id":"detect-undeployment-containerZ-with-errors",
+        "name":"Undeployments detection with Errors",
+        "severity":"HIGH",
+        "eventType":"EVENT"
+    }
+```
+  
+Alerts will be generated just by the chained trigger.
+
+## send-events-tutorial-05.sh
+
+This example sends multiple random events in a loop similar as send-events-tutorial-04.sh.
+
+## clean-all.sh
+
+Important: Delete all alerts and events
